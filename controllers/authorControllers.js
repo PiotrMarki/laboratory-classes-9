@@ -1,6 +1,5 @@
 import Author from '../models/Author.js';
 
-// GET /api/authors - lista autorów
 export const getAllAuthors = async (req, res) => {
   try {
     const authors = await Author.find();
@@ -10,7 +9,6 @@ export const getAllAuthors = async (req, res) => {
   }
 };
 
-// PUT /api/authors/:id - edycja autora
 export const updateAuthor = async (req, res) => {
   try {
     const { id } = req.params;
@@ -32,7 +30,6 @@ export const updateAuthor = async (req, res) => {
   }
 };
 
-// Dodatkowa funkcja do tworzenia autorów (pomocna do testowania)
 export const createAuthor = async (req, res) => {
   try {
     const { firstName, lastName } = req.body;

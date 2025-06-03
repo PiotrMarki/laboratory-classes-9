@@ -1,7 +1,6 @@
 import Book from '../models/Book.js';
 import Author from '../models/Author.js';
 
-// GET /api/books - lista książek z informacją o autorze
 export const getAllBooks = async (req, res) => {
   try {
     const books = await Book.find().populate('author', 'firstName lastName');
@@ -11,12 +10,10 @@ export const getAllBooks = async (req, res) => {
   }
 };
 
-// POST /api/books - dodanie książki
 export const createBook = async (req, res) => {
   try {
     const { title, year, author } = req.body;
 
-    // Sprawdź czy autor istnieje
     const authorExists = await Author.findById(author);
     if (!authorExists) {
       return res.status(400).json({ error: 'Author not found' });
@@ -37,7 +34,6 @@ export const createBook = async (req, res) => {
   }
 };
 
-// DELETE /api/books/:id - usunięcie książki
 export const deleteBook = async (req, res) => {
   try {
     const { id } = req.params;

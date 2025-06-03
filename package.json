@@ -1,7 +1,7 @@
 {
   "name": "mvc-books-api",
   "version": "1.0.0",
-  "description": "Express.js MVC API for Books and Authors",
+  "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
