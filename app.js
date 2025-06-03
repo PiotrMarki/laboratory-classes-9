@@ -13,8 +13,8 @@ const app = express();
 // app.use();
 app.use(express.json());
 
-app.use("/api/books", bookRoutes);
-app.use("/api/authors", authorRoutes);
+//app.use("/api/books", bookRoutes);
+//app.use("/api/authors", authorRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
